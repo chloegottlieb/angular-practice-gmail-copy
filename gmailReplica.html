@@ -1,0 +1,34 @@
+<html ng-app="EmailApp">
+    <head>
+    	<meta charset="utf-8">
+    	<title>AngularJS Email App</title>
+    	<!-- <link href="css/style.css" rel="stylesheet"> -->
+    </head>
+    <body>
+
+    	<main class="main" role="main">
+    		<div ng-controller="TestCtrl">
+    			<h1>{{ [ firstName, lastName ].join(" ") }}</h1>
+    			<div class="total-info">{{ cost * quantity | currency }}</div>
+    			<div class ="budget">{{ ( total > budget) ? "Too Expensive" : "You can buy it!" }}</div>2
+    			<input type="text" ng-model="title">
+    		</div>
+    		<div class="wrapper">
+    			<div ng-view></div>
+    		</div>
+    		<div ng-controller="InboxCtrl">
+    		{{ title }}
+    		</div>
+    	</main>
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+        </script>
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="angular-route.js"></script>
+
+        <script src="js/gmailReplica.js"></script>
+        <script src="js/controllers/inbox.js"></script>
+    </body>
+</html>
